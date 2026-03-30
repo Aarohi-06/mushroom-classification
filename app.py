@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
+import time
 
 app = Flask(__name__)
 
@@ -77,7 +78,7 @@ def index():
             top3=top3,
             decision=decision,
             color=color,
-            image_path=file_path
+            image_path=f"/{file_path}?v={int(time.time())}"
         )
 
     return render_template("index.html", result=False)

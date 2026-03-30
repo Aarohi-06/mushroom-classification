@@ -7,12 +7,18 @@
 <body>
 
 <div class="container">
-    <h1>🍄 Mushroom Classifier</h1>
+    <h1>🍄 Mushroom Classifier 🍄</h1>
 
     <form method="post" enctype="multipart/form-data">
         <input type="file" name="file" required>
         <button type="submit">Predict</button>
     </form>
+    
+    <style>
+        .green { color: green; }
+        .red { color: red; }
+        .orange { color: orange; }
+    </style>
 
     {% if result %}
     <div class="card">
@@ -28,7 +34,7 @@
         <p>Edible: {{ edible }}%</p>
         <p>Poisonous: {{ poisonous }}%</p>
 
-        <h2 style="color: {{ color }}">{{ decision }}</h2>
+        <h2 class="{{ color }}">{{ decision }}</h2>
 
         <p class="warning">
             ⚠️ Not for real-life consumption decisions
