@@ -1,45 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 body {
-    font-family: Arial;
-    background: #f5f5f5;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #f8fafc;
+    color: #334155;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     margin-top: 50px;
+    padding: 0 20px;
 }
 
 h1 {
-    color: #2c3e50;
+    color: #1e293b;
+    font-weight: 700;
+    margin-bottom: 30px;
 }
 
 form {
-    margin: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    color: #64748b;
+}
+
+input[type="file"]:hover {
+    border-color: #27ae60;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 28px;
     background: #27ae60;
     color: white;
+    font-size: 16px;
+    font-weight: 600;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
 }
 
 button:hover {
     background: #219150;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(39, 174, 96, 0.4);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(39, 174, 96, 0.3);
 }
 
 .card {
     background: white;
-    padding: 20px;
-    margin: 30px auto;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin: 40px auto;
+    width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes slideUpFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card img {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #475569;
+    margin-bottom: 12px;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #1e293b;
+    margin: 20px 0;
+}
+
+p {
+    color: #64748b;
+    margin: 6px 0;
 }
 
 .warning {
-    color: red;
-    font-size: 12px;
+    color: #dc2626;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 25px;
+    padding: 12px;
+    background: #fef2f2;
+    border-radius: 10px;
+    display: inline-block;
 }
 
+/* Modern Colors for JS Injection */
+.green { color: #16a34a; font-weight: 700; }
+.red { color: #dc2626; font-weight: 700; }
+.orange { color: #ea580c; font-weight: 700; }
